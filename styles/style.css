@@ -1,0 +1,130 @@
+/*импорт стилей текста*/
+@import url(https://db.onlinewebfonts.com/c/2d9f8eba44c6cc97753724bedd5d9f28?family=Soyuz+Grotesk+Bold);
+@import url(https://db.onlinewebfonts.com/c/500bab6b91b58ed1e94efffe8092693c?family=Manrope);
+/*общие правила*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Manrope";
+    font-size: 16px;
+}
+/*смена предустановок имыгы*/
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+/*общее правило для БаДи*/
+body {
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+/*описание навигации*/
+.navbar {
+    position: absolute;
+    top: 10px;
+    margin-bottom: auto;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 40px;
+}
+/*описание якорей навигации(ссылок)*/
+.navbar a {
+    text-decoration: none;
+    /*font-family: "Manrope";*/
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+}/*ну и типо кликнуть если*/
+.navbar a:hover {
+    color: #777;
+}
+/*описание сектора хеадера (хотя думаю другие сектора не особо будут отличаться конкретно этим полем и перепишется в общее правило сектора*/
+.header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100dvh;
+    text-align: center;
+    overflow: hidden;
+    padding-top:auto;
+}
+/*бокс рамка для заголовка текста и кнопки(ну и пока что листиков)*/
+.header-box{
+    position: relative;
+    padding: 20px;
+    width: 80dvw;
+    height:80dvh;
+    border: 5px solid #333333;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+/*ограничение размера логотипа*/
+.logo{
+    max-width:150px;
+}
+/*заголовок внутри рамки*/
+.header-content h1 {
+    font-family: "Soyuz Grotesk Bold";
+    font-size: clamp(32px, 8vw, 80px);
+    margin-bottom: 16px;
+}
+/*текст внутри рамки*/
+.header-content p {
+    /*font-family: "Manrope";*/
+    font-size: clamp(16px, 4vw, 24px);
+    text-align: center;
+    margin-bottom: 24px;
+}
+/*кнопка внутри рамки, цвет,размер,и все такое*/
+.header-button {
+    padding: 8px 24px;
+    background-color: #8B2233;
+    color: #fff;
+    max-height: 60px;
+    min-width: auto;
+    width:clamp(200px 8vw 360px);
+    border: none;
+    /*font-family: "Manrope";*/
+    font-size: clamp(16px, 4vw, 24px);
+    border-radius: 15px;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+/*ну типо серая будет если навести kekw*/
+.header-button:hover {
+    background-color: #555;
+}
+/*Переопределение позиций листьев, распределение по углам рамки */
+.left-leaf-top,
+.right-leaf-top,
+.right-leaf-bottom{
+    position: absolute; 
+    max-width:20%;
+    object-fit: contain;
+    height:auto;
+}
+
+.right-leaf-bottom{
+    bottom: 0;
+    right: 0;
+}
+
+.left-leaf-top{
+    top: 0;
+    left: 0;
+}
+
+.right-leaf-top {
+    top:0;
+    right: 0;
+}
