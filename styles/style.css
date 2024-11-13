@@ -1,12 +1,38 @@
 /*импорт стилей текста*/
 @import url(https://db.onlinewebfonts.com/c/2d9f8eba44c6cc97753724bedd5d9f28?family=Soyuz+Grotesk+Bold);
 @import url(https://db.onlinewebfonts.com/c/500bab6b91b58ed1e94efffe8092693c?family=Manrope);
+/*Даёт возможность браузеру в течение нескольких секунд загрузить шрифт прежде чем отображать текст(font-display:fallback)*/
+@font-face{
+    font-family: "Soyuz Grotesk Bold";
+    src: url("https://db.onlinewebfonts.com/t/2d9f8eba44c6cc97753724bedd5d9f28.eot");
+    src: url("https://db.onlinewebfonts.com/t/2d9f8eba44c6cc97753724bedd5d9f28.eot?#iefix")format("embedded-opentype"),
+        url("https://db.onlinewebfonts.com/t/2d9f8eba44c6cc97753724bedd5d9f28.woff")format("woff"),
+        url("https://db.onlinewebfonts.com/t/2d9f8eba44c6cc97753724bedd5d9f28.woff2")format("woff2"),
+        url("https://db.onlinewebfonts.com/t/2d9f8eba44c6cc97753724bedd5d9f28.ttf")format("truetype"),
+        url("https://db.onlinewebfonts.com/t/2d9f8eba44c6cc97753724bedd5d9f28.svg#Soyuz Grotesk Bold")format("svg");
+    font-weight:normal;
+    font-style:normal;
+    font-display:fallback;
+}
+@font-face{
+    font-family: "Manrope";
+    src: url("https://db.onlinewebfonts.com/t/500bab6b91b58ed1e94efffe8092693c.eot");
+    src: url("https://db.onlinewebfonts.com/t/500bab6b91b58ed1e94efffe8092693c.eot?#iefix")format("embedded-opentype"),
+        url("https://db.onlinewebfonts.com/t/500bab6b91b58ed1e94efffe8092693c.woff")format("woff"),
+        url("https://db.onlinewebfonts.com/t/500bab6b91b58ed1e94efffe8092693c.woff2")format("woff2"),
+        url("https://db.onlinewebfonts.com/t/500bab6b91b58ed1e94efffe8092693c.ttf")format("truetype"),
+        url("https://db.onlinewebfonts.com/t/500bab6b91b58ed1e94efffe8092693c.svg#Manrope")format("svg");
+    font-weight:normal;
+    font-style:normal;
+    font-display:fallback;
+}
+
 /*общие правила*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Manrope";
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
 }
 /*смена предустановок имыгы*/
@@ -24,7 +50,7 @@ body {
 /*описание навигации*/
 .navbar {
     position: absolute;
-    top: 10px;
+    top: 3%;
     margin-bottom: auto;
     display: flex;
     justify-content: center;
@@ -34,7 +60,7 @@ body {
 /*описание якорей навигации(ссылок)*/
 .navbar a {
     text-decoration: none;
-    /*font-family: "Manrope";*/
+    font-family: "Manrope";
     font-size: 16px;
     color: #333;
     font-weight: bold;
@@ -48,38 +74,43 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100dvh;
-    text-align: center;
-    overflow: hidden;
-    padding-top:auto;
+    justify-content: flex-start;
+    padding-top:5%;
+    height: 90vh;
+    text-align: center;   
 }
 /*бокс рамка для заголовка текста и кнопки(ну и пока что листиков)*/
 .header-box{
     position: relative;
     padding: 20px;
-    width: 80dvw;
-    height:80dvh;
+    width: 75vw;
+    height:80vh;
     border: 5px solid #333333;
     border-radius: 20px;
     display: flex;
+    justify-content: space-between;
     flex-direction: column;
     align-items: center;
     gap: 10px;
 }
 /*ограничение размера логотипа*/
 .logo{
+    align-self: flex-start;
+    margin-top: 2%;
+    width:clamp(25px 4vw 150px);
     max-width:150px;
 }
 /*заголовок внутри рамки*/
 .header-content h1 {
+    align-self: center;
     font-family: "Soyuz Grotesk Bold";
     font-size: clamp(32px, 8vw, 80px);
     margin-bottom: 16px;
 }
 /*текст внутри рамки*/
 .header-content p {
-    /*font-family: "Manrope";*/
+    align-self: center;
+    font-family: "Manrope";
     font-size: clamp(16px, 4vw, 24px);
     text-align: center;
     margin-bottom: 24px;
@@ -91,11 +122,13 @@ body {
     color: #fff;
     max-height: 60px;
     min-width: auto;
-    width:clamp(200px 8vw 360px);
+    width:360px;
     border: none;
-    /*font-family: "Manrope";*/
+    font-family: "Manrope";
     font-size: clamp(16px, 4vw, 24px);
     border-radius: 15px;
+    align-self: flex-end;
+    margin-bottom: 2%;
     white-space: nowrap;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -115,16 +148,20 @@ body {
 }
 
 .right-leaf-bottom{
-    bottom: 0;
-    right: 0;
+    bottom: -3%;
+    right: 5%;
+    transform: translate(-3%,5%);
 }
 
 .left-leaf-top{
-    top: 0;
-    left: 0;
+    max-width:40%;
+    top:-5%;
+    left: -10%;
+    transform: translate(-5%,-10%);
 }
 
 .right-leaf-top {
-    top:0;
-    right: 0;
+    top:-5%;
+    right: -5%;
+    transform: translate(-5%,-5%);
 }
