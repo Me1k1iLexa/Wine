@@ -1,18 +1,17 @@
-function updViewport(){
-    const fullHeight = window.innerHeight;
-    const dynamicHeight = window.visualViewport.height;
-    const diff = fullHeight - dynamicHeight;
-    document.documentElement.style.setProperty('--vh-diff', '${diff}px');
-};
+const buttonSideMenu = document.getElementById('button-side-menu');
+const sideMenu = document.getElementById('side-menu');
 
-document.addEventListener('DOMContentLoaded',updViewport);
-
-var resizeTimeout;
-window.addEventListener('resize',()=>{
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(()=>{
-        updViewport();
-    }, 200);
+buttonSideMenu.addEventListener('click',function(){
+    if (sideMenu.classList.contains('active')){
+        sideMenu.classList.add('noActive');
+        setTimeout(()=>{
+            sideMenu.classList.remove('active','noActive');
+        },1300);
+        
+        console.log('Отключилось');
+    }else{
+        sideMenu.classList.add('active');
+        sideMenu.classList.remove('noActive');
+        console.log('Включилось');
+    };
 });
-
-document.addEventListener('fullscreenchange', updViewport);
