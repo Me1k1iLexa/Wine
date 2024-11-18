@@ -38,11 +38,11 @@ document.addEventListener('wheel', function(event) {
     }
 
     isScrolling = true;
-    sections[index].scrollIntoView({ behavior: 'smooth' });
+    sections[index].scrollIntoView({ behavior: 'smooth', block: 'start' });
     console.log('скролл сработал');
 
     setTimeout(() => {
         isScrolling = false;
         console.log('таймер закончился');
-    }, 400); 
+    }, 1300); 
 });

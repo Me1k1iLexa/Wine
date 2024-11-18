@@ -29,7 +29,6 @@ html{
     height: 100vh;
     overflow-y: scroll; 
     scroll-snap-type: y mandatory; 
-    scroll-behavior: smooth;
 }
 /*описание секции*/
 .section {
@@ -40,9 +39,8 @@ html{
     align-items: center;
     justify-content: center;
     text-align:center;
-    font-size: 2rem;
     padding: 20px;
-    scroll-snap-align: start;
+    overflow: hidden;
     transition: transform 1.3s ease-out;
 }
 
@@ -121,7 +119,6 @@ html{
     background-color: #8B2233;
     color: #fff;
     width:360px; 
-
     transition: width 0.3s ease;
     border: none;
     font-family: "Manrope";
@@ -251,10 +248,10 @@ html{
     font-family: "Soyuz Grotesk Bold";
     font-size: clamp(32px, 4vw, 52px);
     color: #333;
-    line-height: 1.4;
     max-width: 50vw;
     width:auto;
 }
+/*описание листика на втором секторе( потом его ждут еще очень большие изменения)*/
 .right-leaf-bottom2{
     position: absolute; 
     max-width:20%;
@@ -269,10 +266,8 @@ html{
     position:relative;
     display: flex;
     align-items: center;
-    overflow: hidden;
     justify-content: center;
     flex-direction: column;
-    padding-top: 5%;
     width:100%;
     height: 100vh;
     text-align: center;
@@ -280,14 +275,9 @@ html{
 .scroll-galery h2{
     align-self: center;
     font-family: "Soyuz Grotesk Bold";
-    font-size: clamp(32px, 8vw, 120px);
+    font-size: clamp(32px, 8vw, 80px);
     margin-bottom: 16px;
     text-align: left;
-}
-.scroll-wrapper{
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
 }
 .scroll-track {
     display: flex;
@@ -301,7 +291,7 @@ html{
 }
 .scroll-item img {
     width: 100%;
-    border-radius: 33%;
+    border-radius: 20%;
 }
 .scroll-item p{
     align-self: center;
