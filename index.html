@@ -10,7 +10,8 @@
 <body>
     <!-- тут я ненавижу тег комментариев html-->
      <!--а тут секция header-->
-    <section class="header">
+<div class="fullpage-container">
+    <section class="section header">
         <!--а вот тут навигация внутри секции с якорями по другим(будущим) секциям-->
         <nav class="navbar">
             <a href="#to-try">где попробовать</a>
@@ -42,9 +43,10 @@
             </div>
         </div>
     </section>
-    <br>
+
+
     <!--Секция два-->
-    <section class="product-info">
+    <section class="section product-info">
         <!-- Кнопка бокового меню -->
         <button id="button-side-menu" class="button-menu">
             <img src="contents/side-menu.png" alt="Menu Icon">
@@ -66,10 +68,42 @@
             </div>
         </div>
         <!-- листик ля-->
-        <div class="right-leaf-bottom">
+        <div class="right-leaf-bottom2">
             <img src="contents/right-leaf-bottom.png" alt="right leaf bottom decorate">
         </div>
     </section>
+
+
+    <!--Сектор третий с колесом картинок-->
+    <section class="section scroll-galery">
+        <h2>Создавай моменты<br> с win-win coffee</h2>
+        <div class="scroll-wrapper"><!--Контейнер с содержимым-->
+            <div class="scroll-track"><!--Контейнер колеса-->
+                <!--Контейнеры с картинками и описанием-->
+                <div class="scroll-item">
+                    <img src="contents/scroll1.png" alt="Автопутешествие">
+                    <p>заберись в автопутешествии</p>
+                </div>
+                <div class="scroll-item">
+                    <img src="contents/scroll2.png" alt="Сходка">
+                    <p>организуй вечернюю дегустацию</p>
+                </div>
+                <div class="scroll-item">
+                    <img src="contents/scroll3.png" alt="Тренировка">
+                    <p>поблагодари себя за тренировку</p>
+                </div>
+                <div class="scroll-item">
+                    <img src="contents/scroll4.png" alt="Свидание">
+                    <p>проведи красивое свидание</p>
+                </div>
+                <div class="scroll-item">
+                    <img src="contents/scroll5.png" alt="Бар">
+                    <p>отметь начало уик-энда в баре</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
     <script  src="scripts/script.js"></script>
 </body>
 </html>

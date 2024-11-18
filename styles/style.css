@@ -17,7 +17,35 @@ body {
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
+    overflow: hidden;
 }
+/*плавный скролл всего сайта*/
+html{
+    scroll-behavior: smooth;
+}
+/*контенер на весь сайт для всех секций*/
+.fullpage-container {
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll; 
+    scroll-snap-type: y mandatory; 
+    scroll-behavior: smooth;
+}
+/*описание секции*/
+.section {
+    position: relative;
+    width:100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align:center;
+    font-size: 2rem;
+    padding: 20px;
+    scroll-snap-align: start;
+    transition: transform 1.3s ease-out;
+}
+
 /*описание навигации*/
 .navbar {
     position: absolute;
@@ -46,16 +74,17 @@ body {
     flex-direction: column;
     align-items: center;
     padding-top:5%;
-    height: 95vh;
+    width:100%;
+    height: 100vh;
     text-align: center;   
 }
-/*бокс рамка для заголовка текста и кнопки(ну и пока что листиков)*/
+/*бокс рамка для заголовка текста и кнопки*/
 .header-box{
     position: relative;
     top:5%;
     padding: 20px;
     width: 85%;
-    height:95%;
+    height:85%;
     border: 5px solid #333333;
     border-radius: 20px;
     display: flex;
@@ -136,16 +165,18 @@ body {
     right: -5%;
     transform: translate(-5%,-5%);
 }
-
+/*Описание сектора с карточкой продукта*/
 .product-info{
     position:relative;
     display: flex;
     align-items: center;
     justify-content: center;
     padding-top: 5%;
-    height: 90vh;
+    width:100%;
+    height: 100vh;
     text-align: left;
 }
+/*описание кнопки меню*/
 .button-menu{
     position: absolute;
     top:20px;
@@ -155,10 +186,12 @@ body {
     cursor:pointer;
     z-index: 1;
 }
+/*описание картинки меню*/
 .button-menu img{
     width:32px;
     height:32px;
 }
+/*описание бокового меню схожего с навигацией первого сектора*/
 .side-menu{
     position:absolute;
     top:0;
@@ -175,6 +208,7 @@ body {
     transform: translateX(-50%); 
     transition: opacity 1.3s ease, transform 1.3s ease;
 }
+/*ссылки в меню*/
 .side-menu a{
     text-decoration: none;
     font-family: "Manrope";
@@ -182,9 +216,11 @@ body {
     color: #333;
     font-weight: bold;
 }
+/*наведение на ссылки меню*/
 .side-menu a:hover{
     color:#777;
 }
+/*описание состоянии открытости/закрытости меню*/
 .side-menu.active{
     visibility: visible;
     opacity: 1;
@@ -194,6 +230,7 @@ body {
     opacity:0;
     transform: translateX(-50%);
 }
+/*описание контейнера для информации о продукте*/
 .product-info-content{
     display:flex;
     align-items: center;
@@ -203,16 +240,72 @@ body {
     max-width: 80vw;
     width:100%;
 }
+/*описание картинки продука*/
 .product-info-image img{
     width:641px;
     height:714px;
     object-fit: contain;
 }
+/*Описание описания продукта*/
 .product-info-content p{
     font-family: "Soyuz Grotesk Bold";
     font-size: clamp(32px, 4vw, 52px);
     color: #333;
     line-height: 1.4;
     max-width: 50vw;
-    width:500px;
+    width:auto;
+}
+.right-leaf-bottom2{
+    position: absolute; 
+    max-width:20%;
+    object-fit: contain;
+    height:auto;
+    bottom:7%;
+    right: 5%;
+    transform: translate(7%,5%);
+}
+/*Следующий сектор*//*ПОКА ЧТО В РАБОТЕ, ЧИСТО ДЛЯ ВИДА */
+.scroll-galery{
+    position:relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 5%;
+    width:100%;
+    height: 100vh;
+    text-align: center;
+}
+.scroll-galery h2{
+    align-self: center;
+    font-family: "Soyuz Grotesk Bold";
+    font-size: clamp(32px, 8vw, 120px);
+    margin-bottom: 16px;
+    text-align: left;
+}
+.scroll-wrapper{
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+.scroll-track {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.3s ease-out;
+}
+.scroll-item {
+    flex: 0 0 auto;
+    width: 300px;
+    text-align: center;
+}
+.scroll-item img {
+    width: 100%;
+    border-radius: 33%;
+}
+.scroll-item p{
+    align-self: center;
+    font-family: "Manrope";
+    font-size: clamp(16px, 4vw, 24px);
+    text-align: center;
 }
