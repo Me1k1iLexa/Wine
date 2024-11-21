@@ -1,3 +1,7 @@
+:root{
+    --text-p-color: #333;
+    --button-color: #8B2233;
+}
 /*общие правила*/
 * {
     margin: 0;
@@ -16,7 +20,7 @@ img {
 body {
     line-height: 1.6;
     background-color: #f4f4f4;
-    color: #333;
+    color: var(--text-p-color);
     overflow: hidden;
 }
 /*плавный скролл всего сайта*/
@@ -29,6 +33,12 @@ html{
     height: 100vh;
     overflow-y: scroll; 
     scroll-snap-type: y mandatory; 
+}
+.noScroll{
+    overflow-y: hidden;
+}
+.fullpage-container.noScroll{
+    padding-right: 17px;
 }
 /*описание секции*/
 .section {
@@ -59,7 +69,7 @@ html{
     text-decoration: none;
     font-family: "Manrope";
     font-size: 16px;
-    color: #333;
+    color: var(--text-p-color);
     font-weight: bold;
 }/*ну и типо кликнуть если*/
 .navbar a:hover {
@@ -116,7 +126,7 @@ html{
 /*кнопка внутри рамки, цвет,размер,и все такое*/
 .header-button {
     padding: 8px 24px;
-    background-color: #8B2233;
+    background-color: var(--button-color);
     color: #fff;
     width:360px; 
     transition: width 0.3s ease;
@@ -210,7 +220,7 @@ html{
     text-decoration: none;
     font-family: "Manrope";
     font-size: 16px;
-    color: #333;
+    color: var(--text-p-color);
     font-weight: bold;
 }
 /*наведение на ссылки меню*/
@@ -247,7 +257,7 @@ html{
 .product-info-content p{
     font-family: "Soyuz Grotesk Bold";
     font-size: clamp(32px, 4vw, 52px);
-    color: #333;
+    color: var(--text-p-color);
     max-width: 50vw;
     width:auto;
 }
@@ -261,7 +271,7 @@ html{
     right: 5%;
     transform: translate(7%,5%);
 }
-/*Следующий сектор*//*ПОКА ЧТО В РАБОТЕ, ЧИСТО ДЛЯ ВИДА */
+/*Описание общего контейнера для сектора 3*/
 .scroll-galery{
     position:relative;
     display: flex;
@@ -272,30 +282,81 @@ html{
     height: 100vh;
     text-align: center;
 }
+/*Заголовок сектора 3*/
 .scroll-galery h2{
-    align-self: center;
     font-family: "Soyuz Grotesk Bold";
-    font-size: clamp(32px, 8vw, 80px);
-    margin-bottom: 16px;
-    text-align: left;
+    font-size: 2em;
+    color: var(--text-p-color);
+    width:auto;
 }
-.scroll-track {
-    display: flex;
-    gap: 30px;
-    transition: transform 0.3s ease-out;
+/*контейнер карусели*/
+.carousel {
+    position: relative;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    max-height: 80vh;
+    height:100%;
+    max-width: 100vw;
+    width:100%;
 }
-.scroll-item {
-    flex: 0 0 auto;
-    width: 300px;
-    text-align: center;
-}
-.scroll-item img {
+/*контейнер для картинок карусели*/
+.carousel-item {
+    position: absolute;
+    max-width: 500px;
+    max-height: 350px;
     width: 100%;
-    border-radius: 20%;
+    height: 100%;
+    border: none;
+    border-radius: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    opacity: 0; /* Изначально скрыты */
+    transition: transform 1.3s ease, opacity 1.3s ease;
 }
-.scroll-item p{
-    align-self: center;
+/*описание картинок карусели*/
+.carousel-item img {
+    width: 500px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+/*центральная фотка*/
+.carousel-item.center {
+    z-index: 3;
+    opacity: 1 !important;
+}
+/*левая фотка*/
+.carousel-item.left {
+    z-index: 2;
+    transform:  translate(-150%,-35%) rotate(-15deg)  scale(0.7);
+    opacity: 0.6 !important;
+}
+/*правая фотка*/
+.carousel-item.right {
+    z-index: 2;
+    transform:  translate(50%,-35%) rotate(15deg) scale(0.7);
+    opacity: 0.6 !important;
+}
+/*описание фотки*/
+.carousel-text {
     font-family: "Manrope";
     font-size: clamp(16px, 4vw, 24px);
-    text-align: center;
+    color: var(--text-p-color);
+}
+/*кнопки(временное решение)*/
+.carousel-controls button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: var(--button-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.carousel-controls button:hover {
+    background-color: #333;
 }
